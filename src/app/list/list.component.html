@@ -1,0 +1,8 @@
+<div class='card-container' *ngFor="let item of users">
+  <div class="card">
+    <div class="item-group" *ngFor="let field of item | keyvalue">
+      <p> {{field.key | titlecase }} </p>
+      <p>{{field.value}}</p>
+    </div>
+  </div>
+</div>

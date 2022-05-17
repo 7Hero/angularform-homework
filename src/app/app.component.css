@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  column-gap: 240px;
+  width: 100%;
+  margin-top: 160px;
+}
+app-form-group {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+app-list {
+  padding-right: 40px;
+  width: 50%;
+}

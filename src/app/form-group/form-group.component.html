@@ -1,0 +1,24 @@
+<form [formGroup]="userForm" (submit)="onSubmit()">
+  <div
+    [ngClass]="{
+    'input-group': true,
+    'error': userForm.controls[field.field].invalid
+               && userForm.controls[field.field].dirty
+               && userForm.controls[field.field].touched
+               && isSubmitted
+    }"
+    *ngFor="let field of fieldList;"
+  >
+      <label>{{field.field | titlecase}}</label>
+      <input placeholder="Enter your {{field.field}}" formControlName="{{field.field}}"/>
+      <p
+        *ngIf="userForm.controls[field.field].invalid
+            && userForm.controls[field.field].dirty
+            && userForm.controls[field.field].touched
+            && isSubmitted"
+      >
+        {{field.errorMsg}}
+      </p>
+  </div>
+  <button type="submit">Submit</button>
+</form>
